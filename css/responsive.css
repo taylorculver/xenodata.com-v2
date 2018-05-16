@@ -110,7 +110,7 @@
   }
 
   .navbar-nav > li {
-    margin-left: 0;
+    margin-left: 5px;
   }
 
   #main-slider .carousel h1 {
@@ -200,6 +200,11 @@
 
   input.search-form:hover {
     width: 120px;
+  }
+
+  .navbar-nav {
+    margin-top: 25px;
+    margin-bottom: 0;
   }
 
   .navbar-nav > li {
