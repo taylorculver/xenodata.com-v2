@@ -315,6 +315,10 @@
   #main-slider .carousel .slide-margin {
     margin: 0 20px;
   }
+
+  #bottom .row {
+    display: flex;
+  }
 }
 
 /* Up to small */

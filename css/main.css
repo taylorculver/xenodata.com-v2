@@ -2486,9 +2486,15 @@ shortcodes page css
 ********* Footer ******
 ************************/
 #bottom {
-  background: #f5f5f5;
+  background-color: #DAE3F3;
   border-bottom: 5px solid #6E15A1;
+  display: flex;
   font-size: 14px;
+  padding-bottom: 30px;
+}
+
+#bottom .row {
+  justify-content: center;
 }
 
 #bottom h3 {
@@ -2519,14 +2525,17 @@ shortcodes page css
 }
 
 #bottom .widget {
-  margin-bottom: 0;
+  margin-bottom: 40px;
+  min-width: 180px;
+  text-align: center;
 }
 
 #footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  color: #fff;
   background: #2e2e2e;
+  color: #fff;
+  min-height: 200px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 #footer a {
@@ -2547,9 +2556,3 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
-
-
-
-
-
-
