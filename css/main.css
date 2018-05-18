@@ -378,12 +378,18 @@ input.search-form:hover {
   padding: 20px;
 }
 
-#main-slider .carousel .slide-margin{
-  margin-top: 140px;
+#main-slider .carousel .carousel-content h1 {
+  color: #7137a1;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
-#main-slider .carousel h2 {
-  color: #fff;
+#main-slider .carousel .carousel-content p {
+  color: #787878;
+  font-size: 20px;
+  margin: 0;
+}
+
 #main-slider .carousel .slide-margin {
   align-items: center;
   display: flex;
@@ -395,7 +401,7 @@ input.search-form:hover {
   background: #6E15A1;
   color: #fff;
   border-radius: 4px;
-  margin-top: 25px;
+  margin-top: 15px;
   display: inline-block;
 }
 
@@ -1028,8 +1034,8 @@ a.accordion-toggle  i{
 }
 
 .carousel-content {
-  background-color: #cacdd1;
-/*  opacity: .8*/
+  background-color: #dae4f3;
+  opacity: .9
 }
 
 #carousel-slider {
