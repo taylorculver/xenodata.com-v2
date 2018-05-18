@@ -310,3 +310,16 @@
 
 }
 
+/* Small and up */
+@media(min-width: 768px){
+  #main-slider .carousel .slide-margin {
+    margin: 0 20px;
+  }
+}
+
+/* Up to small */
+@media(max-width: 768px){
+  #main-slider .carousel .slide-margin {
+    height: 50vh;
+  }
+}
