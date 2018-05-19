@@ -267,11 +267,6 @@
     margin-bottom: 30px;
   }
 
-  .team .single-profile-top,
-  .team .single-profile-bottom {
-    margin-bottom: 30px;
-  }
-
   .clients-area {
     padding: 60px 0;
   }
@@ -325,5 +320,12 @@
 @media(max-width: 768px){
   #main-slider .carousel .slide-margin {
     height: 50vh;
+  }
+}
+
+/* Up to large */
+@media(max-width: 1200px){
+  .team .media {
+    margin-bottom: 15px;
   }
 }

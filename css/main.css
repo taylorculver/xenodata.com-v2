@@ -1017,6 +1017,30 @@ a.accordion-toggle  i{
 ********* About Us Page CSS ******
 **************************/
 
+.row.leadership-team {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.advisory-header {
+  padding-bottom: 40px;
+}
+
+.team .single-profile-top,
+.team .single-profile-bottom {
+  margin-bottom: 30px;
+  max-width: 750px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+p.section-description {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .about-us {
   margin-top: 110px;
   margin-bottom: -110px;
@@ -1180,7 +1204,7 @@ a.accordion-toggle  i{
 .skill-wrap {
   display: block;
   overflow: hidden;
-  margin: 60px 0;
+  margin: 0 0 60px;
 }
 
 .team h4 {
