@@ -547,17 +547,24 @@ input.search-form:hover {
 }
 
 #feature {
-  background: #f2f2f2;
-  padding-bottom: 40px;
+  background: #fff;
+  padding-bottom: 60px;
 }
 
-.features{
-  padding: 0;
+#feature .header {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+}
+
+.features {
+  border-top: 2px solid #dbe3f3;
+  padding-top: 55px;
 }
 
 .feature-wrap {
   margin-bottom: 35px;
-  overflow: hidden;
 }
 
 .feature-wrap h2{
@@ -672,6 +679,29 @@ input.search-form:hover {
 #services .lead,
 #services h2{
   color: #fff;
+}
+
+.focus-areas {
+  background-color: #DAE3F3;
+  padding: 60px 0 90px;
+}
+
+.focus-areas .focus-area {
+  border: 1px solid #dbe3f3;
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.focus-areas .header {
+  padding-bottom: 30px;
+}
+
+.focus-area h2 {
+  color: #a171c5;
+  margin-bottom: 5px;
+  font-size: 22px;
+  margin-top: 12px;
 }
 
 .services-wrap {
@@ -1466,74 +1496,27 @@ ul.social_icons li  a i{
 }
 
 .get-started {
-  background: none repeat scroll 0 0 #F3F3F3;
-  border-radius: 3px;
-  padding-bottom: 30px;
-  position: relative;
-  margin-bottom: 18px;
-  margin-top: 60px;
+  background-color: #F3F3F3;
+  padding-top: 60px;
 }
 
 .get-started h2 {
-  padding-top: 30px;
   margin-bottom: 20px;
-}
-
-.request {
-  bottom: -15px;
-  left: 50%;
-  position: absolute;
-  margin-left: -110px;
-}
-
-.request h4 {
-  position: absolute;
-  width: 220px;
-  position:relative;
-}
-
-.request h4 a{
-  background:#6E15A1;
-  color: #fff;
-  font-size: 14px;
-  font-weight: normal;
-  border-radius: 3px;
-  padding: 5px 15px;
-}
-
-.request h4:after {
-  border-color: #6E15A1 transparent transparent;
-  border-style: solid;
-  border-width: 12px;
-  bottom: -18px;
-  /*content: "";*/
-  height: 0;
-  position: absolute;
-  right: 13px;
-  z-index: -99999;
-}
-
-.request h4:before {
-  border-color: #6E15A1 transparent transparent;
-  border-style: solid;
-  border-width: 12px;
-  bottom: -18px;
-  /*content: "";*/
-  height: 0;
-  left: 13px;
-  position: absolute;
-  z-index: -99999;
 }
 
 .clients-area {
   padding: 60px;
 }
 
+.clients-area .container {
+  padding-top: 30px;
+}
+
 .clients-comments {
-    background-image: url("../images/image_bg.png");
-    background-position: center 118px;
-    background-repeat: no-repeat;
-    margin-bottom: 100px;
+  background-image: url("../images/image_bg.png");
+  background-position: center 118px;
+  background-repeat: no-repeat;
+  margin-bottom: 60px;
 }
 
 .clients-comments img {
@@ -1702,6 +1685,14 @@ ul.social_icons li  a i{
 ********* Pricing Table CSS *
 **************************/
 
+.methodology {
+  padding-top: 60px;
+}
+
+.methodology .header {
+  padding-bottom: 30px;
+}
+
 .pricing_heading {
   margin-top: 120px
 }
@@ -1712,6 +1703,7 @@ ul.social_icons li  a i{
 }
 
 .pricing-area h1 {
+  color: #fff;
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 15px;
@@ -1740,7 +1732,7 @@ ul.social_icons li  a i{
 
 .pricing-area ul li {
   list-style: none;
-  padding: 15px 0;
+  padding: 20px 0;
   font-size: 16px;
   font-weight: 400;
 }
@@ -1763,55 +1755,23 @@ ul.social_icons li  a i{
   border-radius:2px 2px 0 0;
 }
 
-.pricing-area .heading-one,
-.pricing-area .heading-two,
-.pricing-area .heading-three,
-.pricing-area .heading-four,
-.pricing-area .heading-five,
-.pricing-area .heading-six,
-.pricing-area .heading-seven {
-  margin-left: -10px
-}
-
-
-.pricing-area .heading-one,
-.pricing-area .price-one .plan-action .btn-primary {
-  background: #6E15A1
-}
-
-.pricing-area .heading-two,
-.pricing-area .price-two .plan-action .btn-primary {
-  background:#6E15A1;
-}
-
-.pricing-area .heading-three,
-.pricing-area .price-three .plan-action .btn-primary {
+.pricing-area .btn-primary {
   background: #6E15A1;
 }
 
-.pricing-area .heading-four,
-.pricing-area .price-four .plan-action .btn-primary {
-  background: #5c5c5c
+.pricing-area .pricing-heading {
+  background: #6E15A1;
+  padding: 20px;
 }
 
-.pricing-area .heading-five,
-.pricing-area .price-five .plan-action .btn-primary {
-  background: #5c5c5c
-}
-
-.pricing-area .heading-six,
-.pricing-area .price-six .plan-action .btn-primary {
-  background: #e24f43
-;
-}
-
-.pricing-area .heading-seven,
-.pricing-area .price-seven .plan-action .btn-primary {
-  background: #5c5c5c
+.pricing-area .pricing-heading h1 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
 .pricing-area .bg{
- background: #fafafa
+  background: #fafafa;
 }
 
 .pricing-area .heading-one h3:before {
@@ -1862,10 +1822,6 @@ ul.social_icons li  a i{
 
 .small-pricing h3:before {
   top: 74px;
-}
-
-.plan-action {
-  height: 40px;
 }
 
 .pricing-area .plan-action .btn-primary {

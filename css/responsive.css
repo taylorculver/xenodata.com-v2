@@ -321,6 +321,10 @@
   #main-slider .carousel .slide-margin {
     height: 50vh;
   }
+
+  .feature-wrap {
+    overflow: hidden;
+  }
 }
 
 /* Up to large */
