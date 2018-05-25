@@ -187,7 +187,8 @@ body > section {
   line-height: 28px;
 }
 
-.top-number{
+.top-number a,
+.top-number i {
   color: #fff;
 }
 
