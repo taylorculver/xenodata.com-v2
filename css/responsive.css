@@ -333,3 +333,10 @@
     margin-bottom: 15px;
   }
 }
+
+/* Up to large */
+@media(max-width: 1200px){
+  .team .media {
+    margin-bottom: 15px;
+  }
+}
