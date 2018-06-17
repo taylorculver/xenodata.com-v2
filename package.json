@@ -1,0 +1,16 @@
+{
+  "name": "xdp-website",
+  "version": "1.0.0",
+  "description": "XenoDATA Partners Website",
+  "repository": "https://github.com/taylorculver/xenodatapartners.com",
+  "author": "Mutations Limited <contact@mutations.ltd>",
+  "license": "MIT",
+  "dependencies": {
+    "@architect/workflows": "^3.1.13"
+  },
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1",
+    "tiny-json-http": "^7.0.0"
+  }
+}
