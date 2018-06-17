@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    build: .
+    command: npx sandbox
+    env_file:
+      - .env
+      - .env.local
+    image: taylorculver/xdp-website:app
+    ports:
+      - "3333:3333"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules:delegated
+    working_dir: /app
+  web:
+    build: .
+    command: python -m SimpleHTTPServer
+    image: taylorculver/xdp-website:web
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    working_dir: /app
+volumes:
+  node_modules:
