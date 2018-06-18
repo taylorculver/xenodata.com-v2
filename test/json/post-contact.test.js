@@ -1,56 +1,112 @@
+const AWS = require('aws-sdk')
 const arc = require('@architect/workflows')
 const test = require('tape')
 const tiny = require('tiny-json-http')
 
-let server // `arc.sandbox.http` instance for testing
+const dbEndpoint = 'http://localhost:5000'
+const httpEndpoint = 'http://localhost:3333'
+
+const dbClient = new AWS.DynamoDB.DocumentClient({ endpoint: dbEndpoint })
+let dbServer // `arc.sandbox.db` instance for testing
+let httpServer // `arc.sandbox.http` instance for testing
 
 /**
- * first we need to start the local http server
+ * Start the local HTTP server
  */
-test('server.start', t => {
+test('httpServer.start', t => {
   t.plan(1)
 
-  server = arc.sandbox.http.start(() => {
-    t.ok(true, 'http server started on http://localhost:3333')
+  httpServer = arc.sandbox.http.start(() => {
+    t.pass(`http server started at ${httpEndpoint}`)
   })
 })
 
 /**
- * then we can make a request to it and check the result
+ * Start the local DB server
  */
-test('post /contact', t => {
-  t.plan(2)
+test('dbServer.start', t => {
+  t.plan(1)
 
-  const formBody = {
-    email: 'test@test.com',
-    message: 'Hello Test!',
-    name: 'Test Testerson',
-  }
-
-  tiny.post(
-    {
-      data: formBody,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      url: 'http://localhost:3333/contact',
-    },
-    (err, result) => {
-      if (err) throw err
-      t.ok(result.body, 'got 200 response')
-
-      const expected = formBody
-      t.looseEquals(result.body, expected, 'got expected response object')
-    }
-  )
+  dbServer = arc.sandbox.db.start(() => {
+    t.pass(`db server started at ${dbEndpoint}`)
+  })
 })
 
 /**
- * finally close the server so we cleanly exit the test
+ * Make the HTTP request
  */
-test('server.close', t => {
+test('POST /contact', async t => {
+  t.plan(4)
+
+  try {
+    const result = await tiny.post(
+      {
+        data: {
+          contact: {
+            email: 'test@test.com',
+            message: 'Hello Test!',
+            name: 'Test Testerson',
+          },
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        url: `${httpEndpoint}/contact`,
+      },
+    )
+
+    t.ok(result.body, 'got 200 response')
+
+    const { id, success, timestamp } = result.body
+
+    t.is(success, true, 'response is success')
+    t.ok(id.match(/\w+/), 'response `id` matches expected format')
+    t.ok(typeof timestamp === 'number', 'response `timestamp` is numeric')
+  }
+  catch (err) {
+    throw err
+  }
+})
+
+/**
+ * Verify the DB contents
+ */
+test('contact DB record exists', t => {
+  t.plan(3)
+
+  const query = {
+    Key: {
+      email: 'test@test.com'
+    },
+    TableName: 'xdp-website-staging-contacts'
+  }
+  dbClient.get(query, (err, data) => {
+    if (err) throw err
+
+    const { Item: { email, message, name } } = data
+
+    t.equal(email, 'test@test.com', 'got expected email')
+    t.equal(message, 'Hello Test!', 'got expected message')
+    t.equal(name, 'Test Testerson', 'got expected name')
+  })
+})
+
+/**
+ * Close the local DB server
+ */
+test('dbServer.close', t => {
   t.plan(1)
 
-  server.close()
-  t.ok(true, 'server closed')
+  dbServer.close()
+  t.pass('db server closed')
+})
+
+/**
+ * Close the local HTTP server
+ */
+test('httpServer.close', t => {
+  t.plan(1)
+
+  httpServer.close()
+  t.pass('server closed')
 })
