@@ -137,8 +137,8 @@
         <!--                 <p class="lead">Please Leave Us A Message!</p> -->
       </div>
       <div class="row contact-wrap">
-        <div class="status alert alert-success" style="display: none"></div>
-        <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+        <div id="contact-form-alert-success" class="status alert alert-success" style="display: none;"></div>
+        <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="https://dj04cznaih.execute-api.us-west-2.amazonaws.com/staging/contact" data-api-key="laVDk5EvZA3mhjjOZy5Wl8ncPj8Pjx0T5sKVLkKx">
           <div class="col-sm-5 col-sm-offset-1">
             <div class="form-group">
               <label>Name *</label>
@@ -150,11 +150,11 @@
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="number" class="form-control">
+              <input type="tel" name="phone" class="form-control">
             </div>
             <div class="form-group">
               <label>Company Name</label>
-              <input type="text" class="form-control">
+              <input type="text" name="company" class="form-control">
             </div>
           </div>
           <div class="col-sm-5">
@@ -167,7 +167,7 @@
               <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
             </div>
             <div class="form-group">
-              <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+              <button type="submit" name="submit" class="btn btn-primary btn-lg">Submit Message</button>
             </div>
           </div>
         </form>
