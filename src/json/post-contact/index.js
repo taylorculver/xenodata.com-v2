@@ -5,9 +5,12 @@ const sanitizeHtml = require('sanitize-html')
 
 const hashids = new Hashids('xdp-website')
 const validKeys = [
+  'company',
   'email',
   'message',
   'name',
+  'phone',
+  'subject',
 ]
 
 const route = async (request, response) => {
@@ -34,12 +37,15 @@ const route = async (request, response) => {
   record.createdAt = Date.now()
   record.contactID = hashids.encode(record.createdAt)
 
+  const message = 'Thank you, we will be in contact soon!'
+
   try {
     await data.contacts.put(record)
 
     return response({
       json: {
         id: record.contactID,
+        message,
         success: true,
         timestamp: record.createdAt,
       }
