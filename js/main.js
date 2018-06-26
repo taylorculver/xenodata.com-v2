@@ -38,21 +38,42 @@ jQuery(function($) {'use strict',
 		});
 	});
 
-	// Contact form
-	var form = $('#main-contact-form');
-	form.submit(function(event){
-		event.preventDefault();
-		var form_status = $('<div class="form_status"></div>');
-		$.ajax({
-			url: $(this).attr('action'),
+  // Contact form
+  const $form = $('#main-contact-form');
+  $form.on('submit', function (event) {
+    event.preventDefault();
 
-			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
-			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
-		});
-	});
+    // Create the `contact` data object
+    const contact = $form.serializeArray().reduce((object, field) => {
+      const { name, value } = field
+      Reflect.set(object, name, value)
+      return object
+    }, {});
+
+    // Disable the form button
+    $form.find('button').html(
+      '<i class="fa fa-spinner fa-spin"></i> &nbsp;' +
+      'Email is sending...'
+    ).prop('disabled', true)
+
+    $.ajax({
+      contentType: 'application/json',
+      crossDomain: true,
+      data: JSON.stringify({ contact: contact }),
+      dataType: 'json',
+      'headers': {
+        'x-api-key': $form.data('api-key'),
+      },
+      method: 'POST',
+      url: $form.attr('action'),
+    }).done(function (data) {
+      $('#contact-form-alert-success')
+        .text(data.message)
+        .show();
+
+      $form.fadeOut();
+    });
+  });
 
 	
 	//goto top

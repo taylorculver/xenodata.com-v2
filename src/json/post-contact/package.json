@@ -1,0 +1,9 @@
+{
+  "name": "xdp-website-post-contact",
+  "dependencies": {
+    "@architect/data": "^2.0.2",
+    "@architect/functions": "^1.8.10",
+    "hashids": "^1.1.4",
+    "sanitize-html": "^1.18.2"
+  }
+}
