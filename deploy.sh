@@ -1,1 +1,1 @@
-aws s3 sync .  s3://xenodatapartners.com --acl public-read --exclude "*" --include "*.html" --include "*.csv" --include "css/*" --include "fonts/*"  --include "images/*" --include "js/*"
+aws s3 sync .  s3://xenodatapartners.com --acl public-read --exclude "*" --include "*.html" --include "*.csv" --include "*.xml" --include "css/*" --include "fonts/*"  --include "images/*" --include "js/*"
