@@ -2095,6 +2095,9 @@ ul.faq li > div h3 {
   margin-top: 0;
 }
 
+.sample-embed-class {
+    width: 80vw;
+}
 
 .embed-container {
   position: relative;
@@ -2537,3 +2540,20 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
+
+svg {
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+#visualizations {
+  height: 550px;
+  width: 1000px;
+}
+
+
