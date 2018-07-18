@@ -2552,7 +2552,9 @@ svg {
 }
 
 #visualizations {
-  height: 80vh;
+  height: 40vh;
 }
 
-
+#bubbles {
+  height: 40vh;
+}
