@@ -18,8 +18,6 @@ jQuery(function ($) {
         .append('g');
         //.attr('transform', 'translate(' + Math.min(w, h) / 2 + ',' + Math.min(w, h) / 2 + ')');
 
-
-
     var stocks,
         symbols;
 
@@ -561,7 +559,4 @@ jQuery(function ($) {
             lines();
         }, duration);
     }
-
-
-
 })
