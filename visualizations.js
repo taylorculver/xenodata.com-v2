@@ -2,8 +2,7 @@ jQuery(function ($) {
 
     var container = $('#visualizations');
 
-    var m = [20, 20, 30, 20],
-        w = container.width(),
+    var w = container.width(),
         h = container.height();
 
     var x,
@@ -14,10 +13,12 @@ jQuery(function ($) {
     var color = d3.scale.category10();
 
     var svg = d3.select("#visualizations").append("svg")
-        .attr("width", w + m[1] + m[3])
-        .attr("height", h + m[0] + m[2])
-        .append("g")
-        .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+        .attr('viewBox', '0 0 ' + w + ' ' + h)
+        .attr('preserveAspectRatio', 'xMinYMin')
+        .append('g');
+        //.attr('transform', 'translate(' + Math.min(w, h) / 2 + ',' + Math.min(w, h) / 2 + ')');
+
+
 
     var stocks,
         symbols;
