@@ -2551,10 +2551,6 @@ svg {
   stroke-width: 2px;
 }
 
-#visualizations {
-  height: 40vh;
-}
-
-#bubbles {
-  height: 40vh;
+.homepage #middle {
+  padding-bottom: 0;
 }
