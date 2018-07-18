@@ -3,7 +3,7 @@ jQuery(function ($) {
     var container = $('#visualizations');
 
     var w = container.width(),
-        h = container.height();
+        h = w / 2;
 
     var x,
         y,

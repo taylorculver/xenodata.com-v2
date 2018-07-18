@@ -2,7 +2,7 @@ jQuery(function ($) {
     var container = $('#bubbles');
 
     var width = container.width(),
-        height = container.height();
+        height = width / 2;
 
     var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
         root = nodes[0],
