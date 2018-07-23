@@ -2095,6 +2095,9 @@ ul.faq li > div h3 {
   margin-top: 0;
 }
 
+.sample-embed-class {
+    width: 80vw;
+}
 
 .embed-container {
   position: relative;
@@ -2536,4 +2539,18 @@ shortcodes page css
 #footer ul > li {
   display: inline-block;
   margin-left: 15px;
+}
+
+svg {
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.homepage #middle {
+  padding-bottom: 0;
 }
