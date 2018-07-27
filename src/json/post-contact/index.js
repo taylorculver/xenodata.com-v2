@@ -1,17 +1,5 @@
-const Hashids = require('hashids')
 const arc = require('@architect/functions')
-const data = require('@architect/data')
-const sanitizeHtml = require('sanitize-html')
-
-const hashids = new Hashids('xdp-website')
-const validKeys = [
-  'company',
-  'email',
-  'message',
-  'name',
-  'phone',
-  'subject',
-]
+const createContact = require('@architect/shared/helpers/create-contact')
 
 const route = async (request, response) => {
   const { contact } = request.body
@@ -25,22 +13,9 @@ const route = async (request, response) => {
     })
   }
 
-  // Sanitize the incoming data
-  const record = validKeys.reduce((object, key) => {
-    const value = Reflect.get(contact, key)
-    const sanitizedValue = sanitizeHtml(value)
-
-    Reflect.set(object, key, sanitizedValue)
-    return object
-  }, {})
-
-  record.createdAt = Date.now()
-  record.contactID = hashids.encode(record.createdAt)
-
-  const message = 'Thank you, we will be in contact soon!'
-
   try {
-    await data.contacts.put(record)
+    const record = await createContact(contact)
+    const message = 'Thank you, we will be in contact soon!'
 
     return response({
       json: {

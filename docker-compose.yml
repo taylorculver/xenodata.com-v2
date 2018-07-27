@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
       - .env.local
-    image: taylorculver/xdp-website:app
+    image: taylorculver/xdp-web:app
     ports:
       - "3333:3333"
     volumes:
@@ -16,7 +16,7 @@ services:
   web:
     build: .
     command: python -m SimpleHTTPServer
-    image: taylorculver/xdp-website:web
+    image: taylorculver/xdp-web:web
     ports:
       - "8000:8000"
     volumes:

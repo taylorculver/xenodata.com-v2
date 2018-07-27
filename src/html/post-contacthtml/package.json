@@ -1,5 +1,5 @@
 {
-  "name": "xdp-web-post-contact",
+  "name": "xdp-web-post-contacthtml",
   "dependencies": {
     "@architect/data": "^2.0.5",
     "@architect/functions": "^1.8.12",

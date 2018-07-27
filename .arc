@@ -1,5 +1,8 @@
 @app
-xdp-website
+xdp-web
+
+@html
+post /contacthtml
 
 @json
 post /contact
