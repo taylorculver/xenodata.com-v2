@@ -12,6 +12,7 @@
     "@architect/workflows": "^3.2.16"
   },
   "devDependencies": {
+    "qs": "^6.5.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1",
     "tiny-json-http": "^7.0.0"

@@ -65,7 +65,7 @@ jQuery(function($) {'use strict',
         'x-api-key': $form.data('api-key'),
       },
       method: 'POST',
-      url: $form.attr('action'),
+      url: $form.attr('action').replace(/html$/i, ''),
     }).done(function (data) {
       $('#contact-form-alert-success')
         .text(data.message)
