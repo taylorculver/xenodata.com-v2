@@ -53,7 +53,11 @@ RUN chown -R "$APP_USER":"$APP_USER" \
     "$NODE_MODULES_FOLDER"
 
 # Cleanup temp waste from dependency builds
+<<<<<<< Updated upstream
 RUN rm -rf /tmp/*
+=======
+# RUN apk del .build-packages && rm -rf /tmp/*
+>>>>>>> Stashed changes
 
 # Run as unprivileged user
 USER "$APP_USER"
