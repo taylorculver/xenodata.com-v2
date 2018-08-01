@@ -1,5 +1,6 @@
 const arc = require('@architect/functions')
 const createContact = require('@architect/shared/helpers/create-contact')
+const sendContactFormNotification = require('@architect/shared/helpers/send-contact-form-notification')
 
 const { CONTACT_FORM_REDIRECT_URL } = process.env
 
@@ -18,6 +19,7 @@ const route = async (request, response) => {
 
   try {
     await createContact(contact)
+    await sendContactFormNotification(contact)
 
     return response({
       location: (CONTACT_FORM_REDIRECT_URL || '/contact-thank-you.html'),
