@@ -1,5 +1,6 @@
 const arc = require('@architect/functions')
 const createContact = require('@architect/shared/helpers/create-contact')
+const sendContactFormNotification = require('@architect/shared/helpers/send-contact-form-notification')
 
 const route = async (request, response) => {
   const { contact } = request.body
@@ -16,6 +17,8 @@ const route = async (request, response) => {
   try {
     const record = await createContact(contact)
     const message = 'Thank you, we will be in contact soon!'
+
+    await sendContactFormNotification(contact)
 
     return response({
       json: {
